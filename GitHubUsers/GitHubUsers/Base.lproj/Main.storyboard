@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GHUUserCell" id="lRP-oF-uku">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GHUUserCell" id="lRP-oF-uku" customClass="GHUUserCell" customModule="GitHubUsers" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lRP-oF-uku" id="XSM-Dl-etl">
@@ -29,6 +29,16 @@
                                                 <constraint firstAttribute="height" constant="100" id="m7f-ee-GML"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVx-dQ-v9C">
+                                            <rect key="frame" x="5" y="5" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="BMd-T0-ozy"/>
+                                                <constraint firstAttribute="width" constant="100" id="D9r-ET-UKj"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="avatarTapped" destination="lRP-oF-uku" eventType="touchUpInside" id="lPy-cT-SYZ"/>
+                                            </connections>
+                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf6-Em-D1w">
                                             <rect key="frame" x="125" y="20" width="455" height="33"/>
                                             <constraints>
@@ -52,14 +62,21 @@
                                         <constraint firstItem="1a6-Y3-uOY" firstAttribute="top" secondItem="jf6-Em-D1w" secondAttribute="bottom" constant="8" id="2wT-6z-wLY"/>
                                         <constraint firstItem="jf6-Em-D1w" firstAttribute="leading" secondItem="xfg-7o-RZj" secondAttribute="trailing" constant="20" id="3oj-aD-hGq"/>
                                         <constraint firstItem="xfg-7o-RZj" firstAttribute="leading" secondItem="XSM-Dl-etl" secondAttribute="leading" constant="5" id="FQc-YV-9iW"/>
+                                        <constraint firstItem="VVx-dQ-v9C" firstAttribute="leading" secondItem="XSM-Dl-etl" secondAttribute="leading" constant="5" id="IVx-Uj-Cjv"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="1a6-Y3-uOY" secondAttribute="trailing" constant="20" id="PNV-1U-9mp"/>
                                         <constraint firstAttribute="trailing" secondItem="jf6-Em-D1w" secondAttribute="trailing" constant="20" id="RcH-wt-g9R"/>
+                                        <constraint firstItem="VVx-dQ-v9C" firstAttribute="top" secondItem="XSM-Dl-etl" secondAttribute="top" constant="5" id="fdy-1X-aUA"/>
                                         <constraint firstItem="1a6-Y3-uOY" firstAttribute="leading" secondItem="xfg-7o-RZj" secondAttribute="trailing" constant="20" id="grz-Pw-rF5"/>
                                         <constraint firstItem="jf6-Em-D1w" firstAttribute="top" secondItem="XSM-Dl-etl" secondAttribute="top" constant="20" id="kfP-vg-xZC"/>
                                         <constraint firstItem="xfg-7o-RZj" firstAttribute="top" secondItem="XSM-Dl-etl" secondAttribute="top" constant="5" id="zcM-uC-ETq"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="avatar" destination="xfg-7o-RZj" id="jyQ-8u-vbQ"/>
+                                    <outlet property="userNameLabel" destination="jf6-Em-D1w" id="lSQ-9u-RCz"/>
+                                    <outlet property="userProfileLink" destination="1a6-Y3-uOY" id="ZeS-fU-gLK"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

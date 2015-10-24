@@ -36,5 +36,17 @@ class GHUTableViewController: UITableViewController {
     }
     
     // UITableViewDelegate, UITableViewDataSource
-
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // will go to user profile here
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.usersList.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("GHUUserCell") as! GHUUserCell
+        cell.updateUIWithModel(self.usersList[indexPath.row])
+        return cell
+    }
 }
