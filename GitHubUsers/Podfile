@@ -3,4 +3,5 @@ use_frameworks!
 
 target 'GitHubUsers' do
   pod 'AFNetworking', '~> 2.0'
+  pod 'PhotoSlider', '~> 0.9'
 end

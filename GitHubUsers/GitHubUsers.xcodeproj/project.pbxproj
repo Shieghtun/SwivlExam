@@ -15,6 +15,7 @@
 		84048D641BDC0C4E002A4F88 /* GHUUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84048D631BDC0C4E002A4F88 /* GHUUserCell.swift */; };
 		84048D671BDC1349002A4F88 /* GHUUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84048D661BDC1349002A4F88 /* GHUUserModel.swift */; };
 		84048D691BDC13B8002A4F88 /* GHUUsersLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84048D681BDC13B8002A4F88 /* GHUUsersLoader.swift */; };
+		84048D6B1BDC2F4A002A4F88 /* GHUUserCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84048D6A1BDC2F4A002A4F88 /* GHUUserCellDelegate.swift */; };
 		D00F4C014D207E7C09B870E7 /* Pods_GitHubUsers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54BD053262F367199FD0976E /* Pods_GitHubUsers.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		84048D631BDC0C4E002A4F88 /* GHUUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHUUserCell.swift; sourceTree = "<group>"; };
 		84048D661BDC1349002A4F88 /* GHUUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHUUserModel.swift; sourceTree = "<group>"; };
 		84048D681BDC13B8002A4F88 /* GHUUsersLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHUUsersLoader.swift; sourceTree = "<group>"; };
+		84048D6A1BDC2F4A002A4F88 /* GHUUserCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHUUserCellDelegate.swift; sourceTree = "<group>"; };
 		FB98474FBC03CFE2823A6EF8 /* Pods-GitHubUsers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUsers.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUsers/Pods-GitHubUsers.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 				84048D4F1BDC0AFD002A4F88 /* AppDelegate.swift */,
 				84048D611BDC0C12002A4F88 /* GHUTableViewController.swift */,
 				84048D631BDC0C4E002A4F88 /* GHUUserCell.swift */,
+				84048D6A1BDC2F4A002A4F88 /* GHUUserCellDelegate.swift */,
 				84048D531BDC0AFD002A4F88 /* Main.storyboard */,
 				84048D561BDC0AFD002A4F88 /* Assets.xcassets */,
 				84048D581BDC0AFD002A4F88 /* LaunchScreen.storyboard */,
@@ -229,6 +232,7 @@
 			files = (
 				84048D691BDC13B8002A4F88 /* GHUUsersLoader.swift in Sources */,
 				84048D501BDC0AFD002A4F88 /* AppDelegate.swift in Sources */,
+				84048D6B1BDC2F4A002A4F88 /* GHUUserCellDelegate.swift in Sources */,
 				84048D671BDC1349002A4F88 /* GHUUserModel.swift in Sources */,
 				84048D621BDC0C12002A4F88 /* GHUTableViewController.swift in Sources */,
 				84048D641BDC0C4E002A4F88 /* GHUUserCell.swift in Sources */,
@@ -345,11 +349,13 @@
 			baseConfigurationReference = 40077225B16AA9E123B04208 /* Pods-GitHubUsers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = GitHubUsers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shieghtun.GitHubUsers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a1455c0d-4f89-4906-8707-ee6f2954227d";
 			};
 			name = Debug;
 		};
@@ -358,11 +364,13 @@
 			baseConfigurationReference = FB98474FBC03CFE2823A6EF8 /* Pods-GitHubUsers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = GitHubUsers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shieghtun.GitHubUsers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a1455c0d-4f89-4906-8707-ee6f2954227d";
 			};
 			name = Release;
 		};

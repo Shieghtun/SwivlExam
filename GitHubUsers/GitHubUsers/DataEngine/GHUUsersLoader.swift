@@ -24,10 +24,13 @@ class GHUUsersLoader: NSObject {
     }
     
     func loadUsers() {
+        var parameters:Dictionary = ["per_page":"100"]
+        if loadedUsers.count > 0 {
+            parameters.updateValue((self.loadedUsers.last?.userId)!, forKey: "since")
+        }
         self.operationManager?.GET( "https://api.github.com/users",
-            parameters: ["per_page":"100"],
+            parameters: parameters,
             success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                print("JSON: ", responseObject.description)
                 if let jsonArray = responseObject as? NSArray {
                     for userObject in jsonArray {
                         let userDictionary = userObject as? NSDictionary
@@ -36,6 +39,7 @@ class GHUUsersLoader: NSObject {
                             userModel.avatarURL = userDictionary!.valueForKey("avatar_url") as? String
                             userModel.userName = userDictionary!.valueForKey("login") as? String
                             userModel.profileURL = userDictionary!.valueForKey("html_url") as? String
+                            userModel.userId = String(userDictionary!.valueForKey("id") as! Int)
                             self.loadedUsers.append(userModel)
                         }
                     }
@@ -43,7 +47,6 @@ class GHUUsersLoader: NSObject {
                 self.successHandler(self.loadedUsers)
             },
             failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                print("Error: ", error.localizedDescription)
                 self.failureHandler(error)
         })
     }

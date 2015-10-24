@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import PhotoSlider
 
-class GHUTableViewController: UITableViewController {
+class GHUTableViewController: UITableViewController, GHUUserCellDelegate, PhotoSliderDelegate {
     
     var usersLoader:GHUUsersLoader?
     var usersList:Array<GHUUserModel> = []
@@ -35,7 +36,10 @@ class GHUTableViewController: UITableViewController {
         // Will show error here
     }
     
+    
+    
     // UITableViewDelegate, UITableViewDataSource
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // will go to user profile here
     }
@@ -47,6 +51,25 @@ class GHUTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("GHUUserCell") as! GHUUserCell
         cell.updateUIWithModel(self.usersList[indexPath.row])
+        cell.delegate = self
         return cell
     }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let delta:Int = 20
+        if (self.usersList.count > 0) && (indexPath.row + delta == self.usersList.count) {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.usersLoader?.loadUsers()
+            })
+        }
+    }
+    
+    // Cell delegate
+    func avatarTapped(avatarImage: UIImage) {
+        let photoSlider = ViewController(images: [avatarImage])
+        photoSlider.delegate = self
+        photoSlider.visiblePageControl = false
+        self.presentViewController(photoSlider, animated: true, completion: nil)
+    }
+        
 }

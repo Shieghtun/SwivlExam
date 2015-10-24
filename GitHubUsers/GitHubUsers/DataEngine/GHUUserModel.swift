@@ -13,5 +13,5 @@ class GHUUserModel: NSObject {
     var userName : String?
     var profileURL : String?
     var avatarURL : String?
-
+    var userId : String?
 }

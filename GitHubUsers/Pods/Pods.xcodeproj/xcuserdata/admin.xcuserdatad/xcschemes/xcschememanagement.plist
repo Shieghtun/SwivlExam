@@ -9,6 +9,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-GitHubUsers-PhotoSlider-PhotoSlider.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GitHubUsers-PhotoSlider.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GitHubUsers-SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-GitHubUsers.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>CC84417108FEF08BD67ACDF9</key>
+		<key>015F8AF38D3A7905B1ABDF2D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D16763231FA68884DFE79FD0</key>
+		<key>3FA0726A77DFDBC2B57ABD8E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>520A940119C7AD4C5C96133D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8BA2454FDA81B73FBE35C18B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B649B021A540F6EA4C7BE7F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

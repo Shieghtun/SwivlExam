@@ -20,11 +20,19 @@ PODS:
   - AFNetworking/UIKit (2.6.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - PhotoSlider (0.9.0):
+    - SDWebImage
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - PhotoSlider (~> 0.9)
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
+  PhotoSlider: 0013a17de81a27fd575e8620766b4b5c9e341b89
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 
 COCOAPODS: 0.36.0.rc.1

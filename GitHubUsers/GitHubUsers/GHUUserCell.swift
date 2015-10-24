@@ -13,12 +13,15 @@ class GHUUserCell: UITableViewCell {
     @IBOutlet weak var userNameLabel:UILabel?
     @IBOutlet weak var userProfileLink:UILabel?
     @IBOutlet weak var avatar:UIImageView?
+    weak var delegate:GHUUserCellDelegate?
+    weak var model:GHUUserModel?
     
     @IBAction func avatarTapped() {
-        
+        delegate?.avatarTapped!((self.avatar?.image)!)
     }
     
     func updateUIWithModel(userModel:GHUUserModel) {
+        self.model = userModel
         self.userNameLabel?.text = userModel.userName
         self.userProfileLink?.text = userModel.profileURL
         self.avatar?.image = UIImage()

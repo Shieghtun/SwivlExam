@@ -1,0 +1,6 @@
+framework module PhotoSlider {
+  umbrella header "Pods-GitHubUsers-PhotoSlider-umbrella.h"
+
+  export *
+  module * { export * }
+}
