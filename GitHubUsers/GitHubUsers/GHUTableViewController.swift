@@ -42,6 +42,9 @@ class GHUTableViewController: UITableViewController, GHUUserCellDelegate, PhotoS
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // will go to user profile here
+        let selectedModel:GHUUserModel = self.usersList[indexPath.row]
+        UIApplication.sharedApplication().openURL(NSURL.init(string: selectedModel.profileURL!)!)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
